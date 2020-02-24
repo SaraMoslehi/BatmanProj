@@ -54,9 +54,9 @@ class BathmanListEntitiy(
     @ColumnInfo(name = "Poster")
 
     var poster: String? = null,
-    @ColumnInfo(name = "Ratings")
+//    @ColumnInfo(name = "Ratings")
 
-    var ratings: List<Rating?>? = null,
+//    var ratings: List<String?>? = null,
     @ColumnInfo(name = "Metascore")
 
     var metascore: String? = null,

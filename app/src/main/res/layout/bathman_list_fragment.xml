@@ -16,14 +16,10 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_item"
             android:layout_width="match_parent"
-            android:backgroundTint="@color/colorPrimary"
             android:layout_height="match_parent"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:background="@color/colorPrimary"
-            android:layout_height="match_parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
