@@ -39,5 +39,8 @@ object ApiClient {
 
     }
 
+    fun getService(): ApiService {
+        return getApiClient.create(ApiService::class.java)
+    }
 
 }
