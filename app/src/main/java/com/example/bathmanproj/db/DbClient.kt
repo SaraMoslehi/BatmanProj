@@ -11,20 +11,21 @@ abstract class DbClient : RoomDatabase() {
 
     companion object {
 
-//        @Volatile
-//        private var instance: DbClient? = null
+        private var db: DbClient? = null
 
-        fun getDbClient(context: Context): DbClient {
+        fun getDbClient(context: Context): DbClient? {
+            if (db == null) {
 
-            synchronized(this) {
-                val db = Room.databaseBuilder(
-                    context.applicationContext,
-                    DbClient::class.java,
-                    "Bathman_database"
-                ).build()
-
-                return db
+                synchronized(DbClient::class.java) {
+                    val db = Room.databaseBuilder(
+                        context.applicationContext,
+                        DbClient::class.java,
+                        "Bathman_database"
+                    ).allowMainThreadQueries()
+                        .build()
+                }
             }
+            return db
 
 
         }
