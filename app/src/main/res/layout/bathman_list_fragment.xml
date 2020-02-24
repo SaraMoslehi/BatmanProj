@@ -15,12 +15,15 @@
         android:layout_height="match_parent">
 
 
-        <TextView
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Hello" />
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_height="match_parent"/>
 
-
+        <Button
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:layout_height="match_parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

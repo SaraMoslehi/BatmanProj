@@ -24,8 +24,7 @@ class BathmanListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding =
-            DataBindingUtil.inflate(inflater, R.layout.bathman_list_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.bathman_list_fragment, container, false)
 
         return binding.root
 
@@ -38,5 +37,7 @@ class BathmanListFragment : Fragment() {
 
         // TODO: Use the ViewModel
     }
+
+
 
 }
