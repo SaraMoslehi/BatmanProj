@@ -18,7 +18,7 @@ interface ApiService {
  @GET()
     fun getDetail(
         @Query("apikey") apikey: String,
-        @Query("s") s: String
+        @Query("i") i: String
     ): Call<BatmanDetail>
 
 

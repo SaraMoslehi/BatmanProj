@@ -1,13 +1,9 @@
 package com.example.batmanproj.model
 
 import com.google.gson.annotations.Expose
-
 import com.google.gson.annotations.SerializedName
 
-
-
-
-class BatmanList {
+class BatmanList(){
     @SerializedName("Search")
     @Expose
     private val search: List<Search>? = null

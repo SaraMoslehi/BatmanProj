@@ -6,9 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import java.util.concurrent.Executors
 
-@Database(entities = [BatmanListEntitiy::class], version = 1)
+@Database(entities = [BatmanListEntitiy::class, BatmanDetailEntitiy::class], version = 1)
 abstract class DbClient : RoomDatabase() {
     abstract fun batmanListDao(): BatmanListDao
+    abstract fun batmanDetailDao(): BatmanDetailDao
 
     companion object {
 

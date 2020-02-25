@@ -1,4 +1,4 @@
-package com.example.batmanproj
+package com.example.batmanproj.fragment.list
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.batmanproj.R
 import com.example.batmanproj.databinding.BatmanListFragmentBinding
 
 
@@ -17,7 +18,8 @@ class BatmanListFragment : Fragment() {
 
     private lateinit var viewModel: BatmanListViewModel
 
-    private val listAdapter = ListAdapter(arrayListOf())
+    private val listAdapter =
+        ListAdapter(arrayListOf())
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +27,8 @@ class BatmanListFragment : Fragment() {
     ): View? {
 
         binding =
-            DataBindingUtil.inflate(inflater, R.layout.batman_list_fragment, container, false)
+            DataBindingUtil.inflate(inflater,
+                R.layout.batman_list_fragment, container, false)
 
         return binding.root
 

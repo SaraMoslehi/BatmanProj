@@ -3,8 +3,6 @@ package com.example.batmanproj.model
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-
-
 class BatmanDetail {
     @SerializedName("Title")
     @Expose
@@ -81,7 +79,6 @@ class BatmanDetail {
     @SerializedName("Response")
     @Expose
     private var response: String? = null
-
 
 
 }
