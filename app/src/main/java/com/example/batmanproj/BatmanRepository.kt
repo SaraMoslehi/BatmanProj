@@ -29,17 +29,15 @@ class BatmanRepository(application: Application) {
 
 
     fun getBatmanLists(apikey : String , s : String){
-        ApiClient.getService().getList().enqueue(object : Callback<BatmanList?> {
+        ApiClient.getService().getList(apikey,s).enqueue(object : Callback<BatmanList?> {
             override fun onFailure(call: Call<BatmanList?>, t: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+           }
 
             override fun onResponse(
                 call: Call<BatmanList?>,
                 response: Response<BatmanList?>
             ) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+          }
         })
     }
 
