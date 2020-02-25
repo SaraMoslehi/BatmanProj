@@ -1,4 +1,4 @@
-package com.example.bathmanproj.db
+package com.example.batmanproj.db
 
 import android.content.Context
 import androidx.room.Database
@@ -6,9 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import java.util.concurrent.Executors
 
-@Database(entities = [BathmanListEntitiy::class], version = 1)
+@Database(entities = [BatmanListEntitiy::class], version = 1)
 abstract class DbClient : RoomDatabase() {
-    abstract fun bathmanListDao(): BathmanListDao
+    abstract fun batmanListDao(): BatmanListDao
 
     companion object {
 
@@ -28,7 +28,7 @@ abstract class DbClient : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     DbClient::class.java,
-                    "Bathman_database"
+                    "Batman_database"
                 ).allowMainThreadQueries()
                     .build()
                 dbInstance = instance
@@ -42,7 +42,7 @@ abstract class DbClient : RoomDatabase() {
 //                    val db = Room.databaseBuilder(
 //                        context.applicationContext,
 //                        DbClient::class.java,
-//                        "Bathman_database"
+//                        "Batman_database"
 //                    ).allowMainThreadQueries()
 //                        .build()
 //                }

@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="com.example.bathmanproj.BathmanListFragment" />
+            type="com.example.batmanproj.BatmanListFragment" />
     </data>
 
 

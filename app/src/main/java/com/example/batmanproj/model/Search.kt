@@ -1,4 +1,4 @@
-package com.example.bathmanproj.model
+package com.example.batmanproj.model
 
 import com.google.gson.annotations.Expose
 

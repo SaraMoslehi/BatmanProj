@@ -1,12 +1,11 @@
-package com.example.bathmanproj.db
+package com.example.batmanproj.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.bathmanproj.model.Rating
 
-@Entity(tableName = "BathmanList")
-class BathmanListEntitiy(
+@Entity(tableName = "BatmanList")
+class BatmanListEntitiy(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

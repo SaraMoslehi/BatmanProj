@@ -1,4 +1,4 @@
-package com.example.bathmanproj
+package com.example.batmanproj
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -7,16 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bathmanproj.databinding.BathmanListFragmentBinding
+import com.example.batmanproj.databinding.BatmanListFragmentBinding
 
 
-class BathmanListFragment : Fragment() {
+class BatmanListFragment : Fragment() {
 
-    lateinit var binding: BathmanListFragmentBinding
+    lateinit var binding: BatmanListFragmentBinding
 
-    private lateinit var viewModel: BathmanListViewModel
+    private lateinit var viewModel: BatmanListViewModel
 
     private val listAdapter = ListAdapter(arrayListOf())
 
@@ -26,7 +25,7 @@ class BathmanListFragment : Fragment() {
     ): View? {
 
         binding =
-            DataBindingUtil.inflate(inflater, R.layout.bathman_list_fragment, container, false)
+            DataBindingUtil.inflate(inflater, R.layout.batman_list_fragment, container, false)
 
         return binding.root
 
@@ -35,8 +34,8 @@ class BathmanListFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.model = this
-        viewModel = ViewModelProviders.of(this).get(BathmanListViewModel::class.java)
-//        viewModel.getBAthmanList().observe(viewLifecycleOwner, Observer { })
+        viewModel = ViewModelProviders.of(this).get(BatmanListViewModel::class.java)
+//        viewModel.getBatmanList().observe(viewLifecycleOwner, Observer { })
 
         binding.listItem.apply {
             layoutManager = LinearLayoutManager(context)
@@ -44,7 +43,7 @@ class BathmanListFragment : Fragment() {
         }
 
 
-        viewModel.getBathmanlists("3e974fca", "batman")
+        viewModel.getBatmanlists("3e974fca", "batman")
         // TODO: Use the ViewModel
     }
 

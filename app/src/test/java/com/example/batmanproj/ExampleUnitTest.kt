@@ -1,4 +1,4 @@
-package com.example.bathmanproj
+package com.example.batmanproj
 
 import org.junit.Test
 

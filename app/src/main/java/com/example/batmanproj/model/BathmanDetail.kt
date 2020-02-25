@@ -1,11 +1,11 @@
-package com.example.bathmanproj.model
+package com.example.batmanproj.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 
 
-class BathmanDetail {
+class BatmanDetail {
     @SerializedName("Title")
     @Expose
     private var title: String? = null

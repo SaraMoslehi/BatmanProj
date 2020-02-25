@@ -1,4 +1,4 @@
-package com.example.bathmanproj
+package com.example.batmanproj
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

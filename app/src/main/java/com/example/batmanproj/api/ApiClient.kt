@@ -1,4 +1,4 @@
-package com.example.bathmanproj.api
+package com.example.batmanproj.api
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit
 
 object ApiClient {
 
-    private var baseURL: String = "http://www.omdbapi.com/"
+    private var baseURL: String = "http://www.omdbapi.com/?apikey=3e974fca&s=batman"
 
     fun getClient(): OkHttpClient {
 
@@ -32,6 +32,7 @@ object ApiClient {
             val retrofit = Retrofit.Builder()
                 .baseUrl(baseURL)
                 .addConverterFactory(GsonConverterFactory.create())
+                .client(getClient())
                 .build()
 
             return@lazy retrofit

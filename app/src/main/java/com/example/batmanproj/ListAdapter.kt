@@ -1,14 +1,12 @@
-package com.example.bathmanproj
+package com.example.batmanproj
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bathmanproj.model.BathmanDetail
-import com.example.bathmanproj.model.BathmanList
-import java.util.zip.Inflater
+import com.example.batmanproj.model.BatmanList
 
-class ListAdapter(var list: ArrayList<BathmanList>) :
+class ListAdapter(var list: ArrayList<BatmanList>) :
     RecyclerView.Adapter<ListAdapter.ListAdapterHolder>() {
 
 
