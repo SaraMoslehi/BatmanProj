@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "BatmanDetail")
-class BatmanDetailEntitiy(
+data class BatmanDetailEntitiy(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

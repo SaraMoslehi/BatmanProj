@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.batmanproj.R
+import com.example.batmanproj.api.ApiClient
 import com.example.batmanproj.databinding.BatmanListFragmentBinding
 
 
@@ -46,7 +47,7 @@ class BatmanListFragment : Fragment() {
         }
 
 
-        viewModel.getBatmanlists("3e974fca", "batman")
+        viewModel.getBatmanlists(ApiClient.apiKey, "batman")
         // TODO: Use the ViewModel
     }
 

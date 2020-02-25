@@ -1,9 +1,8 @@
-package com.example.batmanproj.repo
+package com.example.batmanproj.fragment.list
 
 import android.app.Application
 import com.example.batmanproj.api.ApiClient
 import com.example.batmanproj.db.BatmanListDao
-import com.example.batmanproj.db.BatmanListEntitiy
 import com.example.batmanproj.db.DbClient
 import com.example.batmanproj.model.BatmanList
 import retrofit2.Call
@@ -38,7 +37,7 @@ class BatmanListRepository(application: Application) {
                 call: Call<BatmanList?>,
                 response: Response<BatmanList?>
             ) {
-               var batmanList =response.body()
+                var batmanList = response.body()
 //                var batmanListEntitiy = BatmanListEntitiy()
             }
         })

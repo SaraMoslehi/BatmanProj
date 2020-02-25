@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit
 object ApiClient {
 
     private var baseURL: String = "http://www.omdbapi.com/"
+    var apiKey: String = "3e974fca"
 
     fun getClient(): OkHttpClient {
 

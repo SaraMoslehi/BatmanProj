@@ -1,12 +1,15 @@
 package com.example.batmanproj.db
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.databinding.adapters.Converters
+import androidx.room.*
+import retrofit2.Converter
 import java.util.concurrent.Executors
 
-@Database(entities = [BatmanListEntitiy::class, BatmanDetailEntitiy::class], version = 1)
+@Database(entities = arrayOf(BatmanListEntitiy::class, BatmanDetailEntitiy::class), version = 2)
+
+//@TypeConverters(Converters::class)
+
 abstract class DbClient : RoomDatabase() {
     abstract fun batmanListDao(): BatmanListDao
     abstract fun batmanDetailDao(): BatmanDetailDao

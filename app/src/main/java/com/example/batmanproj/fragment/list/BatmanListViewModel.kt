@@ -2,7 +2,6 @@ package com.example.batmanproj.fragment.list
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import com.example.batmanproj.repo.BatmanListRepository
 
 class BatmanListViewModel(application: Application) : AndroidViewModel(application) {
     // TODO: Implement the ViewModel

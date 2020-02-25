@@ -1,21 +1,20 @@
 package com.example.batmanproj.fragment.detail
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.batmanproj.fragment.list.BatmanDetailViewModel
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.example.batmanproj.R
+import com.example.batmanproj.api.ApiClient
+import com.example.batmanproj.databinding.BatmanDetailFragmentBinding
 
 
 class BatmanDetailFragment : Fragment() {
 
-    companion object {
-        fun newInstance() =
-            BatmanDetailFragment()
-    }
+    lateinit var binding: BatmanDetailFragmentBinding
 
     private lateinit var viewModel: BatmanDetailViewModel
 
@@ -23,13 +22,20 @@ class BatmanDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.batman_detail_fragment, container, false)
+
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.batman_detail_fragment, container, false)
+
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        binding.model = this
+
         viewModel = ViewModelProviders.of(this).get(BatmanDetailViewModel::class.java)
-        // TODO: Use the ViewModel
+
+        viewModel.getBatmanDetail(ApiClient.apiKey, "")
     }
 
 }

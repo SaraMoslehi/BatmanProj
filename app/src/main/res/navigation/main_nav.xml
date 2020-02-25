@@ -8,6 +8,11 @@
     <fragment
         android:id="@+id/batmanListFragment"
         android:name="com.example.batmanproj.fragment.list.BatmanListFragment"
-        tools:layout="@layout/batman_list_fragment"
-        android:label="BatmanListFragment" />
+        android:label="BatmanListFragment"
+        tools:layout="@layout/batman_list_fragment" />
+    <fragment
+        android:id="@+id/batmanDetailFragment"
+        android:name="com.example.batmanproj.fragment.detail.BatmanDetailFragment"
+        android:label="batman_detail_fragment"
+        tools:layout="@layout/batman_detail_fragment" />
 </navigation>

@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "BatmanList")
-class BatmanListEntitiy(
+data class BatmanListEntitiy(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
@@ -13,8 +13,8 @@ class BatmanListEntitiy(
 //    @ColumnInfo(name = "Search")
 //    private val search: List<Search>? = null,
     @ColumnInfo(name = "totalResults")
-    private val totalResults: String? = null,
+     val totalResults: String? = null,
     @ColumnInfo(name = "Response")
-    private val response: String? = null
+     val response: String? = null
 
 )
