@@ -8,20 +8,12 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET("http://www.omdbapi.com/")
-    fun getList(
-        @Query("apikey") apikey: String,
-        @Query("s") s: String
-    ): Call<BatmanList>
+    @GET("/")
+    fun getList(@Query("apikey") apikey: String, @Query("s") s: String): Call<BatmanList>
 
 
- @GET()
-    fun getDetail(
-        @Query("apikey") apikey: String,
-        @Query("i") i: String
-    ): Call<BatmanDetail>
-
-
+    @GET("/")
+    fun getDetail(@Query("apikey") apikey: String, @Query("i") i: String): Call<BatmanDetail>
 
 
 }

@@ -6,13 +6,14 @@ import androidx.room.*
 import retrofit2.Converter
 import java.util.concurrent.Executors
 
-@Database(entities = arrayOf(BatmanListEntitiy::class, BatmanDetailEntitiy::class), version = 2)
+@Database(entities = arrayOf(BatmanListEntitiy::class, BatmanDetailEntitiy::class,MovieEntity::class) , version = 2)
 
 //@TypeConverters(Converters::class)
 
 abstract class DbClient : RoomDatabase() {
     abstract fun batmanListDao(): BatmanListDao
     abstract fun batmanDetailDao(): BatmanDetailDao
+    abstract fun movieDao(): MovieDao
 
     companion object {
 
