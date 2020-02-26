@@ -24,11 +24,21 @@ class ListAdapter(var list: ArrayList<BatmanList>) :
 
 
     override fun onBindViewHolder(holder: ListAdapterHolder, position: Int) {
-        holder.bind()
+
     }
 
+    fun updateList(newList: List<BatmanList>) {
+        list.clear()
+        list.addAll(newList)
+        notifyDataSetChanged()
+    }
 
     class ListAdapterHolder(view: View) : RecyclerView.ViewHolder(view) {
+        //        val binding :RowItemBinding
+//        init {
+//            binding =
+//        }
+
         fun bind() {
 
         }
