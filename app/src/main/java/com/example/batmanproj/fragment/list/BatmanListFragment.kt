@@ -17,6 +17,7 @@ class BatmanListFragment : Fragment() {
 
     lateinit var binding: BatmanListFragmentBinding
 
+
     private lateinit var viewModel: BatmanListViewModel
 
     private val listAdapter =
