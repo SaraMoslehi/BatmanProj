@@ -17,7 +17,7 @@ class ListAdapter(list: ArrayList<MovieEntity>, context: Context, onClickAdapter
 
     var mItems = list
     var mContext: Context = context
-    var onClickAdapter: OnClickAdapter = onClickAdapter
+    var onClickAdapter = onClickAdapter
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -53,14 +53,13 @@ class ListAdapter(list: ArrayList<MovieEntity>, context: Context, onClickAdapter
 
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         var binding = DataBindingUtil.bind<RowItemBinding>(itemView)
 
         init {
             itemView.setOnClickListener(View.OnClickListener {
-
-
+                onClickAdapter.onClick(adapterPosition,mItems[adapterPosition])
             })
         }
     }
@@ -72,7 +71,7 @@ class ListAdapter(list: ArrayList<MovieEntity>, context: Context, onClickAdapter
 
     interface OnClickAdapter {
 
-        fun onClick(position: Int)
+        fun onClick(position: Int, item :MovieEntity)
 
     }
 

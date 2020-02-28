@@ -7,12 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.batmanproj.R
 import com.example.batmanproj.api.ApiClient
 import com.example.batmanproj.databinding.BatmanListFragmentBinding
+import com.example.batmanproj.db.MovieEntity
 
 
 class BatmanListFragment : Fragment() {
@@ -23,7 +25,10 @@ class BatmanListFragment : Fragment() {
 
     private val listAdapter by lazy {
         ListAdapter(arrayListOf(), context!!, object : ListAdapter.OnClickAdapter {
-            override fun onClick(position: Int) {
+            override fun onClick(position: Int,itemBinding :MovieEntity) {
+                Toast.makeText(context ,""  +position , Toast.LENGTH_SHORT).show()
+
+
 
             }
         })
