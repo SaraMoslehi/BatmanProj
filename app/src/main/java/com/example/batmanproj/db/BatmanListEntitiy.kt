@@ -1,6 +1,7 @@
 package com.example.batmanproj.db
 
 import androidx.room.ColumnInfo
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -10,11 +11,15 @@ data class BatmanListEntitiy(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     var id: Int,
-//    @ColumnInfo(name = "Search")
-//    private val search: List<Search>? = null,
+
+//    @TypeConverters(SearchConverter::class)
+    @Embedded
+    private val search: List<test>? = null,
+
     @ColumnInfo(name = "totalResults")
-     val totalResults: String? = null,
+    val totalResults: String? = null,
     @ColumnInfo(name = "Response")
-     val response: String? = null
+    val response: String? = null
+
 
 )

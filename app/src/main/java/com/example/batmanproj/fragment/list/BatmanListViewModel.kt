@@ -2,22 +2,24 @@ package com.example.batmanproj.fragment.list
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
+import com.example.batmanproj.db.BatmanListEntitiy
 
 class BatmanListViewModel(application: Application) : AndroidViewModel(application) {
     // TODO: Implement the ViewModel
     private var batmanRepository: BatmanListRepository
-//    private var batmanList: LiveData<List<BatmanListEntitiy>>
+    private var batmanList: LiveData<List<BatmanListEntitiy>>
 
     init {
 
         batmanRepository =
             BatmanListRepository(application)
-//        batmanList = batmanRepository.getBatmanList()
+        batmanList = batmanRepository.getBatmanList()
     }
 
-//    fun getBatmanList(): LiveData<List<BatmanListEntitiy>> {
-//        return batmanList
-//    }
+    fun getBatmanList(): LiveData<List<BatmanListEntitiy>> {
+        return batmanList
+    }
 
     fun getBatmanlists(apikey : String , s : String) {
         batmanRepository.getBatmanLists(apikey ,s)
