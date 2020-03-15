@@ -41,6 +41,19 @@ class BatmanListRepository(application: Application) {
             ) {
                 var batmanList = response.body()
 //                var batmanListEntitiy = BatmanListEntitiy()
+                DbClient.executorsService.execute(Runnable {
+//                    for (item in batmanList.search!!) {
+//                        movieDao.insertMovies(
+//                            MovieEntity(
+//                                0,
+//                                item.title,
+//                                item.year,
+//                                item.imdbID,
+//                                item.type,
+//                                item.poster
+//                            )
+//                        )
+                })
             }
         })
     }

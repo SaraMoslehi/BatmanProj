@@ -13,8 +13,8 @@ data class BatmanListEntitiy(
     var id: Int,
 
 //    @TypeConverters(SearchConverter::class)
-    @Embedded
-    private val search: List<test>? = null,
+//    @Embedded
+//    private val search: List<test>? = null,
 
     @ColumnInfo(name = "totalResults")
     val totalResults: String? = null,

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -23,20 +24,20 @@ class BatmanListFragment : Fragment(){
 
     private lateinit var viewModel: BatmanListViewModel
 
-//    private val listAdapter by lazy {
-//        ListAdapter(arrayListOf(), context!!, object : ListAdapter.OnClickAdapter {
-//
-//            override fun onClick(position: Int, item: BatmanListEntitiy) {
-//                Toast.makeText(context, "" + position, Toast.LENGTH_SHORT).show()
-//            }
-//        })
-//    }
+    private val listAdapter by lazy {
+        ListAdapter(arrayListOf(), context!!, object : ListAdapter.OnClickAdapter {
 
-    private  val listAdapter = ListAdapter(arrayListOf(), context!!, object : ListAdapter.OnClickAdapter {
-        override fun onClick(position: Int, item: BatmanListEntitiy) {
-            TODO("Not yet implemented")
-        }
-    })
+            override fun onClick(position: Int, item: BatmanListEntitiy) {
+                Toast.makeText(context, "" + position, Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+//    Caused by: kotlin.KotlinNullPointerException
+//    private  val listAdapter = ListAdapter(arrayListOf(), context!!, object : ListAdapter.OnClickAdapter {
+//        override fun onClick(position: Int, item: BatmanListEntitiy) {
+//            TODO("Not yet implemented")
+//        }
+//    })
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
