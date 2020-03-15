@@ -14,7 +14,7 @@ import retrofit2.Response
 class BatmanListRepository(application: Application) {
 
     private var batmanDao: BatmanListDao
-        private var batmanList: LiveData<List<BatmanListEntitiy>>
+    private var batmanList: LiveData<List<BatmanListEntitiy>>
     private var dbClient: DbClient
 
     init {
@@ -39,10 +39,18 @@ class BatmanListRepository(application: Application) {
                 call: Call<BatmanList?>,
                 response: Response<BatmanList?>
             ) {
-                var batmanList :BatmanList= response.body()!!
+                var batmanList: BatmanList = response.body()!!
 //                var batmanListEntitiy = BatmanListEntitiy()
                 DbClient.executorsService.execute(Runnable {
-                    for (item in batmanList.search!!) {
+                    batmanDao.insertBatman(
+                        BatmanListEntitiy(
+                            0,
+                            batmanList.search,
+                            batmanList.totalResults,
+                            batmanList.response
+                        )
+                    )
+//                    for (item in batmanList.search!!) {
 //                        movieDao.insertMovies(
 //                            MovieEntity(
 //                                0,
@@ -53,7 +61,7 @@ class BatmanListRepository(application: Application) {
 //                                item.poster
 //                            )
 //                        )
-                    }
+//                    }
                 })
             }
         })

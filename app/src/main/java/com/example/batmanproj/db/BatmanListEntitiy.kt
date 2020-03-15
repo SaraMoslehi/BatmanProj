@@ -1,9 +1,7 @@
 package com.example.batmanproj.db
 
-import androidx.room.ColumnInfo
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
+import com.example.batmanproj.model.Search
 
 @Entity(tableName = "BatmanList")
 data class BatmanListEntitiy(
@@ -12,9 +10,8 @@ data class BatmanListEntitiy(
     @ColumnInfo(name = "id")
     var id: Int,
 
-//    @TypeConverters(SearchConverter::class)
-//    @Embedded
-//    private val search: List<test>? = null,
+    @TypeConverters(SearchConverter::class)
+    val search: List<Search>? =null,
 
     @ColumnInfo(name = "totalResults")
     val totalResults: String? = null,

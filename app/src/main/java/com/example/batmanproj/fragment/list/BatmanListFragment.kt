@@ -14,6 +14,7 @@ import com.example.batmanproj.R
 import com.example.batmanproj.api.ApiClient
 import com.example.batmanproj.databinding.BatmanListFragmentBinding
 import com.example.batmanproj.db.BatmanListEntitiy
+import com.example.batmanproj.model.Search
 
 
 class BatmanListFragment : Fragment(){
@@ -65,6 +66,7 @@ class BatmanListFragment : Fragment(){
         viewModel.getBatmanList().observe(viewLifecycleOwner, Observer {
 
             binding.loadingView.visibility = View.GONE
+            binding.listError.visibility =View.GONE
             listAdapter.updateList(it)
 
         })

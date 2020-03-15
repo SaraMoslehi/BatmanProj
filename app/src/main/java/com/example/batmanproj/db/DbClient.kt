@@ -8,7 +8,7 @@ import java.util.concurrent.Executors
 
 @Database(entities = arrayOf(BatmanListEntitiy::class, BatmanDetailEntitiy::class), version = 2)
 
-//@TypeConverters(Converters::class)
+@TypeConverters(SearchConverter::class)
 
 abstract class DbClient : RoomDatabase() {
     abstract fun batmanListDao(): BatmanListDao
