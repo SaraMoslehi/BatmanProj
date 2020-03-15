@@ -39,10 +39,10 @@ class BatmanListRepository(application: Application) {
                 call: Call<BatmanList?>,
                 response: Response<BatmanList?>
             ) {
-                var batmanList = response.body()
+                var batmanList :BatmanList= response.body()!!
 //                var batmanListEntitiy = BatmanListEntitiy()
                 DbClient.executorsService.execute(Runnable {
-//                    for (item in batmanList.search!!) {
+                    for (item in batmanList.search!!) {
 //                        movieDao.insertMovies(
 //                            MovieEntity(
 //                                0,
@@ -53,6 +53,7 @@ class BatmanListRepository(application: Application) {
 //                                item.poster
 //                            )
 //                        )
+                    }
                 })
             }
         })
