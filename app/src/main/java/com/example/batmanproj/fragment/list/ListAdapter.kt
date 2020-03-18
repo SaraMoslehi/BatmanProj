@@ -11,14 +11,14 @@ import com.bumptech.glide.request.RequestOptions
 import com.example.batmanproj.R
 import com.example.batmanproj.databinding.RowItemBinding
 import com.example.batmanproj.db.BatmanListEntitiy
+import com.example.batmanproj.model.Search
 
-class ListAdapter(
-    var list: ArrayList<BatmanListEntitiy>, context: Context
-    , onClickAdapter: OnClickAdapter
-) :
+class ListAdapter
+    (var list: MutableList<Search>, context: Context,
+     onClickAdapter: OnClickAdapter) :
     RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
-    var mItems = list
+    var mItems: MutableList<Search> = list
     var mContext: Context = context
     var onClickAdapter = onClickAdapter
 
@@ -60,13 +60,10 @@ class ListAdapter(
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = mItems[0].search?.get(position)
+        val item = mItems[position]
 
-        holder.binding!!.txtTitle.text = item!!.title
-        val options = RequestOptions()
-            .error(R.mipmap.ic_launcher_round)
+        holder.binding!!.txtTitle.text = item.title
         Glide.with(mContext)
-            .setDefaultRequestOptions(options)
             .load(item.poster)
             .into(holder.binding!!.imgPoster)
         holder.binding!!.executePendingBindings()
@@ -74,9 +71,11 @@ class ListAdapter(
 
     }
 
-    fun updateList(newList: List<BatmanListEntitiy>) {
-        mItems.addAll(newList)
-        notifyDataSetChanged()
+    fun updateList(newList: ArrayList<Search>?) {
+        if (newList != null) {
+            mItems.addAll(newList)
+            notifyDataSetChanged()
+        }
     }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -92,7 +91,7 @@ class ListAdapter(
     }
 
     interface OnClickAdapter {
-        fun onClick(position: Int, item: BatmanListEntitiy)
+        fun onClick(position: Int, item: Search)
     }
 
 }

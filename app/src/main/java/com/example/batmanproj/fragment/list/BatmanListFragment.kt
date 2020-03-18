@@ -28,7 +28,7 @@ class BatmanListFragment : Fragment(){
     private val listAdapter by lazy {
         ListAdapter(arrayListOf(), context!!, object : ListAdapter.OnClickAdapter {
 
-            override fun onClick(position: Int, item: BatmanListEntitiy) {
+            override fun onClick(position: Int, item: Search) {
                 Toast.makeText(context, "" + position, Toast.LENGTH_SHORT).show()
             }
         })
@@ -62,12 +62,13 @@ class BatmanListFragment : Fragment(){
 //        viewModel.getBatmanList().observe(viewLifecycleOwner, Observer { })
 
         initRecycleView()
-      
+
         viewModel.getBatmanList().observe(viewLifecycleOwner, Observer {
 
             binding.loadingView.visibility = View.GONE
-            binding.listError.visibility =View.GONE
-            listAdapter.updateList(it)
+            binding.listError.visibility = View.GONE
+            if (!it.isNullOrEmpty() && it[0].search!!.isNotEmpty())
+                listAdapter.updateList(it[0].search as ArrayList<Search>?)
 
         })
 
